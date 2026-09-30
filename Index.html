@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Quest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div>
+            <h1>Habit<span>Quest</span></h1>
+            <p>Build habits. Build yourself.</p>
+        </div>
+
+        <button id="addHabitBtn" class="add-btn">+ Add Habit</button>
+    </header>
+
+    <main>
+
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div>
+                    <small>Current Streak</small>
+                    <strong id="streak">0 days</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div>
+                    <small>XP</small>
+                    <strong id="xp">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div>
+                    <small>Today's Progress</small>
+                    <strong id="progressText">0%</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="progress-box">
+            <div class="progress-header">
+                <span>Today's Progress</span>
+                <span id="progressPercent">0%</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+        </section>
+
+        <section class="section-heading">
+            <div>
+                <h2>Today's Habits</h2>
+                <p id="todayDate"></p>
+            </div>
+        </section>
+
+        <section id="habitList" class="habit-list"></section>
+
+        <div id="emptyState" class="empty-state">
+            <div>🎯</div>
+            <h2>No habits yet</h2>
+            <p>Create your first habit and start your streak.</p>
+            <button class="add-btn" id="emptyAddBtn">+ Create Habit</button>
+        </div>
+
+    </main>
+
+    <!-- Add Habit Modal -->
+
+    <div id="modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <button id="closeModal" class="close-btn">×</button>
+
+            <h2>Create New Habit</h2>
+            <p class="modal-subtitle">What do you want to improve?</p>
+
+            <label>Habit Name</label>
+            <input
+                type="text"
+                id="habitName"
+                placeholder="e.g. No Added Sugar"
+                maxlength="40"
+            >
+
+            <label>Choose Icon</label>
+
+            <div class="emoji-grid">
+                <button class="emoji active">🍬</button>
+                <button class="emoji">💧</button>
+                <button class="emoji">🚶</button>
+                <button class="emoji">📚</button>
+                <button class="emoji">🏋️</button>
+                <button class="emoji">😴</button>
+                <button class="emoji">🧘</button>
+                <button class="emoji">🎯</button>
+            </div>
+
+            <label>Frequency</label>
+
+            <select id="frequency">
+                <option value="daily">Every Day</option>
+                <option value="weekly">Weekly</option>
+            </select>
+
+            <button id="saveHabit" class="save-btn">
+                Create Habit
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
